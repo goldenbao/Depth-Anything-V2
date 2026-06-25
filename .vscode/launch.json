@@ -1,0 +1,84 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python 调试程序: 当前文件",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal"
+        },
+        {
+            "name": "Depth - Run (vitl)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--encoder",
+                "vitl",
+                "--img-path",
+                "${workspaceFolder}/data/benchmark/match_data/rgb_left",
+                "--outdir",
+                "${workspaceFolder}/depth_vitl/benchmark",
+                "--save-numpy",
+            ]
+        },
+        {
+            "name": "Depth - Run (vitb)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--encoder",
+                "vitb",
+                "--img-path",
+                "${workspaceFolder}/data/benchmark/l",
+                "--outdir",
+                "${workspaceFolder}/depth_vitb/benchmark",
+                "--save-numpy",
+            ]
+        },
+        {
+            "name": "Depth - Run (vits)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--encoder",
+                "vits",
+                "--img-path",
+                "${workspaceFolder}/data/benchmark/l",
+                "--outdir",
+                "${workspaceFolder}/depth_vits/benchmark",
+                "--pred-only",
+                "--grayscale",
+                "--save-numpy"
+            ]
+        },
+        {
+            "name": "Depth - Video (vitl)",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/run_video.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--encoder",
+                "vitl",
+                "--video-path",
+                "${workspaceFolder}/assets/examples_video",
+                "--outdir",
+                "${workspaceFolder}/video_depth_vis"
+            ]
+        },
+        {
+            "name": "Depth - Gradio Demo",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/app.py",
+            "console": "integratedTerminal"
+        }
+    ]
+}
